@@ -1,0 +1,55 @@
+{
+  "type": "O",
+  "header": {
+    "type": "O",
+    "txId": {
+      "type": "S",
+      "length": "10",
+      "desc": "거래ID"
+    },
+    "userId": {
+      "type": "S",
+      "length": "8",
+      "desc": "사용자ID"
+    },
+    "itemCount": {
+      "type": "LN",
+      "length": "3",
+      "value": "items",
+      "desc": "아이템 개수"
+    }
+  },
+  "items": {
+    "type": "L",
+    "length": "2",
+    "desc": "아이템 목록",
+    "itemName": {
+      "type": "S",
+      "length": "10",
+      "desc": "상품명"
+    },
+    "qty": {
+      "type": "N",
+      "length": "3",
+      "desc": "수량"
+    },
+    "tags": {
+      "type": "A",
+      "length": "2",
+      "desc": "태그 배열",
+      "tag": {
+        "type": "S",
+        "length": "5",
+        "desc": "태그값"
+      }
+    }
+  },
+  "footer": {
+    "type": "O",
+    "memo": {
+      "type": "S",
+      "length": "20",
+      "desc": "메모"
+    }
+  }
+}

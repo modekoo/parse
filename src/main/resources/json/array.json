@@ -1,0 +1,11 @@
+{
+  "type": "O",
+  "tags": {
+    "type": "A",
+    "length": "3",
+    "tag": {
+      "type": "S",
+      "length": "5"
+    }
+  }
+}

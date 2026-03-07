@@ -11,14 +11,6 @@ import org.springframework.web.servlet.ModelAndView;
 @Slf4j
 public class ParseController {
 
-    @GetMapping("/")
-    public ModelAndView rootHelloWorld(@RequestHeader HttpHeaders headers){
-        ModelAndView mav = new ModelAndView("Hello");
-        log.info("/root");
-        log.info("headers : ", headers);
-        return mav;
-    }
-
     @GetMapping("/test")
     public ModelAndView helloWorld(){
         ModelAndView mav = new ModelAndView("Hello");

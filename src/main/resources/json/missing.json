@@ -1,0 +1,18 @@
+{
+  "type": "O",
+  "user": {
+    "type": "O",
+    "name": {
+      "type": "S",
+      "length": "8"
+    },
+    "phone": {
+      "type": "S",
+      "length": "11"
+    }
+  },
+  "status": {
+    "type": "S",
+    "length": "1"
+  }
+}

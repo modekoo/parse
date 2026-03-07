@@ -1,5 +1,7 @@
 package com.modekoo.parse.util;
 
+import com.modekoo.parse.enums.FieldType;
+
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
@@ -37,21 +39,20 @@ public class Utils {
             String padStr;
 
             if(fillLen > 0){
-                if("N".equals(type)){
-                    padStr = String.format("%" + fillLen + "s", "").replaceAll(" ", "0");
-                    sb.append(data);
+                if(FieldType.NUMBER.getCode().equals(type)){
+                    padStr = "0".repeat(fillLen);
                     sb.append(padStr);
+                    sb.append(data);
                 }
                 //type : S, JS, default
                 else{
-                    padStr = String.format("%-" + fillLen + "s", "");
+                    padStr = " ".repeat(fillLen);
                     sb.append(data);
                     sb.append(padStr);
                 }
             }
             else
                 sb.append(data);
-
         }
         catch (Exception e){
 
@@ -60,7 +61,7 @@ public class Utils {
     }
 
     public static String stringReduce(String type, String data){
-        if(type.equals("N")){
+        if(type.equals(FieldType.NUMBER.getCode())){
             if(String.valueOf(data).equals("")){
                 return "0";
             }
@@ -68,7 +69,7 @@ public class Utils {
                 data = new DecimalFormat("0").format(new BigDecimal(data.trim()));
             }
         }
-        else if(type.equals("S")){
+        else if(type.equals(FieldType.STRING.getCode())){
             data = data.trim();
         }
         return data;
